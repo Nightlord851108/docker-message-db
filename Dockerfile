@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres:14
 ARG MESSAGE_DB_VERSION
 
 WORKDIR /usr/src
@@ -8,3 +8,4 @@ RUN mv message-db-${MESSAGE_DB_VERSION} message-db
 
 WORKDIR /
 COPY docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
+
